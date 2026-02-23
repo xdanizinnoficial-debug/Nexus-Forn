@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Forn - Impulsos Discord</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- LOADING SCREEN -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-container">
+            <div class="loading-logo">
+                <i class="fas fa-rocket"></i>
+            </div>
+            <div class="loading-text">
+                <h2>Nexus Forn</h2>
+                <p id="loadingMessage">Carregando...</p>
+            </div>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content" id="mainContent" style="display: none;">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-bolt"></i>
+                    <span>Nexus Forn</span>
+                </div>
+                <nav class="nav">
+                    <a href="#produtos" class="nav-link">Produtos</a>
+                    <a href="#suporte" class="nav-link">Suporte</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="wumpus-bg" id="wumpusBg"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Impulsos Discord Rápidos & Confiáveis</h1>
+                    <p>Eleve sua comunidade ao próximo nível com impulsos de alta qualidade</p>
+                    <button class="btn btn-primary" onclick="scrollToProducts()">
+                        Começar Agora
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUTOS SECTION -->
+        <section class="produtos" id="produtos">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-star"></i>
+                    Nossos Planos
+                </h2>
+                <div class="produtos-grid">
+                    <div class="produto-card" data-id="1" data-preco="3.99" data-qtd="2x">
+                        <div class="produto-header">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>2x Impulsos</h3>
+                        <p class="preco">R$ 3,99</p>
+                        <p class="descricao">Perfeito para começar</p>
+                        <button class="btn btn-select" onclick="selectProduct(this)">
+                            Selecionar
+                        </button>
+                    </div>
+
+                    <div class="produto-card" data-id="2" data-preco="11.99" data-qtd="6x">
+                        <div class="produto-header">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>6x Impulsos</h3>
+                        <p class="preco">R$ 11,99</p>
+                        <p class="descricao">Mais impulsos, mais poder</p>
+                        <button class="btn btn-select" onclick="selectProduct(this)">
+                            Selecionar
+                        </button>
+                    </div>
+
+                    <div class="produto-card" data-id="3" data-preco="27.99" data-qtd="14x">
+                        <div class="produto-header">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>14x Impulsos</h3>
+                        <p class="preco">R$ 27,99</p>
+                        <p class="descricao">Economia incrível</p>
+                        <button class="btn btn-select" onclick="selectProduct(this)">
+                            Selecionar
+                        </button>
+                    </div>
+
+                    <div class="produto-card" data-id="4" data-preco="59.99" data-qtd="30x">
+                        <div class="produto-header">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>30x Impulsos</h3>
+                        <p class="preco">R$ 59,99</p>
+                        <p class="descricao">O melhor valor</p>
+                        <button class="btn btn-select" onclick="selectProduct(this)">
+                            Selecionar
+                        </button>
+                    </div>
+                </div>
+
+                <div class="compra-section">
+                    <button class="btn btn-comprar" id="btnComprar" onclick="irParaPagamento()" disabled>
+                        <i class="fas fa-shopping-cart"></i>
+                        Comprar Agora
+                    </button>
+                    <p class="aviso-beta">⚡ Entrega imediata. Plataforma em fase Beta.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUPORTE SECTION -->
+        <section class="suporte" id="suporte">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-headset"></i>
+                    Suporte 24/7
+                </h2>
+                <div class="suporte-grid">
+                    <div class="suporte-card">
+                        <div class="suporte-icon">
+                            <i class="fab fa-discord"></i>
+                        </div>
+                        <h3>Discord</h3>
+                        <p>Suporte rápido via nossa comunidade no Discord</p>
+                        <a href="https://discord.gg/peRvRAFhCM" target="_blank" class="btn btn-discord">
+                            <i class="fab fa-discord"></i>
+                            Entrar no Discord
+                        </a>
+                    </div>
+
+                    <div class="suporte-card">
+                        <div class="suporte-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Formulário</h3>
+                        <p>Envie sua solicitação diretamente pelo nosso site</p>
+                        <button class="btn btn-form" onclick="scrollToForm()">
+                            <i class="fas fa-envelope"></i>
+                            Abrir Formulário
+                        </button>
+                    </div>
+                </div>
+
+                <!-- FORMULÁRIO DE SUPORTE -->
+                <div class="formulario-suporte" id="formularioSuporte">
+                    <h3>Formulário de Suporte</h3>
+                    <form id="supportForm" onsubmit="handleSubmitForm(event)">
+                        <div class="form-group">
+                            <label for="nomeUsuario">Nome de Usuário</label>
+                            <input type="text" id="nomeUsuario" name="nome" required placeholder="Seu nome ou @ do Discord">
+                        </div>
+                        <div class="form-group">
+                            <label for="produtoComprado">Produto Comprado</label>
+                            <select id="produtoComprado" name="produto">
+                                <option value="">Selecione um produto</option>
+                                <option value="2x Impulsos">2x Impulsos - R$ 3,99</option>
+                                <option value="6x Impulsos">6x Impulsos - R$ 11,99</option>
+                                <option value="14x Impulsos">14x Impulsos - R$ 27,99</option>
+                                <option value="30x Impulsos">30x Impulsos - R$ 59,99</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagemSuporte">Mensagem</label>
+                            <textarea id="mensagemSuporte" name="mensagem" required placeholder="Descreva seu problema ou solicitação..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-enviar">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Solicitação
+                        </button>
+                    </form>
+                    <div id="successMessage" class="success-message" style="display: none;">
+                        ✅ Solicitação enviada com sucesso! Entraremos em contato em breve.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>Nexus Forn</h4>
+                        <p>Impulsos Discord de qualidade com entrega imediata</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Links Úteis</h4>
+                        <a href="#produtos">Produtos</a>
+                        <a href="#suporte">Suporte</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Redes Sociais</h4>
+                        <a href="https://discord.gg/peRvRAFhCM" target="_blank">
+                            <i class="fab fa-discord"></i> Discord
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-stats">
+                    <div class="live-counter">
+                        <p id="counterText">👤 Carregando compras recentes...</p>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>🚀 Nexus Forn está em fase Beta</p>
+                    <p>Expandindo constantemente a plataforma</p>
+                    <p>&copy; 2026 Nexus Forn. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
