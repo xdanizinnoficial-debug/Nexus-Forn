@@ -1,23 +1,37 @@
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+.styles {
+    --primary-color: #6A0C93;
+    --secondary-color: #FF6F61;
+    --background-color: #f8f9fa;
+    --text-color: #212529;
+    --gradient-bg: linear-gradient(135deg, #6A0C93, #FF6F61);
+    font-family: 'Arial', sans-serif;
 }
 
 body {
-    background-color: #6f2c91; /* Main purple theme */
-    color: #fff;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
+.header {
+    background: var(--gradient-bg);
+    padding: 20px;
+    text-align: center;
 }
 
-/* Animations */
-.fade-in {
+.header h1 {
+    color: white;
+    margin: 0;
+}
+
+.hero {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--gradient-bg);
     animation: fadeIn 1s;
 }
 
@@ -26,24 +40,76 @@ h1, h2, h3, h4 {
     to { opacity: 1; }
 }
 
-/* Mobile responsiveness */
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.support {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.footer {
+    background: var(--gradient-bg);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.payment {
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
 @media (max-width: 768px) {
-    body {
-        background-color: #a36bb1; /* Lighter purple for smaller screens */
-    }
-    .container {
+    .header, .hero, .footer {
         padding: 10px;
     }
-    h1 {
-        font-size: 24px;
+    .btn {
+        width: 100%;
     }
 }
 
-@media (max-width: 480px) {
-    h1 {
-        font-size: 20px;
-    }
-    .container {
-        padding: 5px;
-    }
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loading .spinner {
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-top: 8px solid var(--primary-color);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
