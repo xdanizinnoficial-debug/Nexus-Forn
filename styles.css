@@ -1,46 +1,49 @@
-.navbar {
-  background: linear-gradient(to right, #9b59b6, #8e44ad);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 body {
-  background-image: url('path/to/wumpus-background.jpg');
-  background-size: cover;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+    background-color: #6f2c91; /* Main purple theme */
+    color: #fff;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
-.product-card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
-  overflow: hidden;
-  margin: 20px;
+h1, h2, h3, h4 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
 }
 
-.product-card:hover {
-  transform: scale(1.05);
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s;
 }
 
-.loading-screen {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
+/* Mobile responsiveness */
 @media (max-width: 768px) {
-  .navbar {
-    display: flex;
-    flex-direction: column;
-  }
-  .product-card {
-    margin: 10px;
-  }
+    body {
+        background-color: #a36bb1; /* Lighter purple for smaller screens */
+    }
+    .container {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+    .container {
+        padding: 5px;
+    }
 }
